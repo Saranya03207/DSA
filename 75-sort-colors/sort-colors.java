@@ -9,8 +9,8 @@ class Solution {
                 int temp=nums[mid];
                 nums[mid]=nums[low];
                 nums[low]=temp;
-                low++;
                 mid++;
+                low++;
             }else if(nums[mid]==1){
                 mid++;
             }else{

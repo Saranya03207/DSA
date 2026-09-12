@@ -2,14 +2,13 @@ class Solution {
     public List<Integer> findDuplicates(int[] nums) {
         List<Integer> l=new ArrayList<>();
 
-        HashMap<Integer,Integer> hm=new HashMap<>();
-        for(int c:nums){
-            hm.put(c,hm.getOrDefault(c,0)+1);
-        }
-
-        for(Map.Entry<Integer,Integer> e:hm.entrySet()){
-            if(e.getValue()>1){
-                l.add(e.getKey());
+        for(int i=0;i<nums.length;i++){
+            int n=Math.abs(nums[i]);
+            
+            if(nums[n-1]<0){
+                l.add(n);
+            }else{
+                nums[n-1]*=-1;
             }
         }
 

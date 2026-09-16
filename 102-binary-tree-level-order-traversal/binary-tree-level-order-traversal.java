@@ -21,13 +21,11 @@ class Solution {
         }
 
         Queue<TreeNode> q=new LinkedList<>();
-        
         q.offer(root);
-        
         while(!q.isEmpty()){
-            int size=q.size();
+            int s=q.size();
             List<Integer> level=new ArrayList<>();
-            for(int i=0;i<size;i++){
+            for(int i=0;i<s;i++){
                 TreeNode temp=q.poll();
                 level.add(temp.val);
                 if(temp.left!=null){
@@ -39,7 +37,6 @@ class Solution {
             }
             l.add(level);
         }
-
         return l;
     }
 }
